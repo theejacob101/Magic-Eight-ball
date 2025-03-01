@@ -1,9 +1,7 @@
-ÿþ&cls
 cls
 @echo off
 chcp 65001 >nul
-Title Magic 8 Ball  Devloped By @theejacob101 on Github
-color a
+Title cmd.exe - magic8ball
 
 
 echo.
@@ -24,10 +22,11 @@ echo.
 echo.
 echo Use the Magic 8 Ball to answer your yes or no questions.
 echo.
+timeout /t 1 /nobreak >nul
 
-echo Ask your question.
+set /p question=Ask your question:
+echo %question% >>questions.txt
 echo.
-Pause
 echo.
 
 echo Rolling the Magic 8 Ball...
@@ -54,4 +53,4 @@ echo.
 
 echo Would you like to try again?
 choice
-if /I %ERRORLEVEL% EQU 1 call files\games\magic8ball 
+if /I %ERRORLEVEL% EQU 1 call .\magic8ball 
